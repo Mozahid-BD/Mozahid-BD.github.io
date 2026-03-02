@@ -5,12 +5,11 @@ book_slug: ultimate-sword-master-book-1
 series_title: "দ্যা আল্টিমেট সোর্ড মাষ্টার সিরিজ"
 book_title: "মৃত্যু গহ্বরে তাং ঈ।"
 chapter_no: 1
-chapter_title: "মৃত্যু গহ্বরের দ্বার"
+chapter_title: "সোর্ড সেক্টের এক নম্বর ‘অপদার্থ"
 chapter_title_en: "The Gate of the Death Abyss"
 discussion_link: "https://github.com/Mozahid-BD/Mozahid-BD.github.io/discussions"
 ---
 
-**সোর্ড সেক্টের এক নম্বর ‘অপদার্থ’**
 
 প্রোফাউন্ডার মহাদেশ। 
 এই মহাদেশের দক্ষিণাঞ্চলে মহান অগনিত পর্বতমালার গ্র্যান্ড চিন সাম্রাজ্য।
