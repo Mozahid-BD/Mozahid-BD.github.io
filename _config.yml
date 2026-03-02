@@ -30,3 +30,8 @@ defaults:
       comments: false
       share: false
       related: true
+
+      collections:
+  poems:
+    output: true
+    permalink: /poems/:path/
