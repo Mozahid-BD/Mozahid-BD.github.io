@@ -1,0 +1,54 @@
+---
+layout: single
+---
+
+{% assign chapters = site.chapters | where: "book_id", page.book_id | sort: "chapter_no" %}
+{% assign idx = nil %}
+
+{% for ch in chapters %}
+  {% if ch.url == page.url %}
+    {% assign idx = forloop.index0 %}
+  {% endif %}
+{% endfor %}
+
+<div class="chapter-head">
+  <p class="muted">{{ page.series_title }} • {{ page.book_title }}</p>
+  <h1>{{ page.chapter_no }}. {{ page.chapter_title }}</h1>
+</div>
+
+<div class="chapter-content">
+  {{ content }}
+</div>
+
+<hr>
+
+<div class="chapter-nav">
+  <div>
+    {% if idx and idx > 0 %}
+      {% assign prev = chapters[idx | minus: 1] %}
+      <a class="btn" href="{{ prev.url }}">← Previous</a>
+    {% endif %}
+  </div>
+
+  <div>
+    <a class="btn" href="/books/{{ page.book_slug }}/">Book page</a>
+  </div>
+
+  <div>
+    {% if idx != nil and idx < chapters.size | minus: 1 %}
+      {% assign next = chapters[idx | plus: 1] %}
+      <a class="btn btn--primary" href="{{ next.url }}">Next →</a>
+    {% endif %}
+  </div>
+</div>
+
+<hr>
+
+<div class="feedback-box">
+  <h3>Public feedback</h3>
+  <p>Share your thoughts in GitHub Discussions (mention chapter number).</p>
+  {% if page.discussion_link %}
+    <a class="btn btn--primary" href="{{ page.discussion_link }}" target="_blank" rel="noopener">Give feedback</a>
+  {% endif %}
+  <p class="muted">Tip: write “Book 1, Chapter {{ page.chapter_no }}” at the top of your comment.</p>
+</div>
