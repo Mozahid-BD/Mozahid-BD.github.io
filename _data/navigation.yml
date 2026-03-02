@@ -1,0 +1,15 @@
+main:
+  - title: "Home"
+    url: /
+  - title: "Research"
+    url: /research/
+  - title: "Blog"
+    url: /blog/
+  - title: "Books"
+    url: /books/
+  - title: "Gallery"
+    url: /gallery/
+  - title: "Bio"
+    url: /bio/
+  - title: "Sales"
+    url: /sales/
