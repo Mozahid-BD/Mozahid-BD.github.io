@@ -1,0 +1,20 @@
+---
+layout: single
+---
+
+<h1 class="poem-title">{{ page.title }}</h1>
+{% if page.poem_meta %}<p class="muted poem-meta">{{ page.poem_meta }}</p>{% endif %}
+
+<div class="poem-body">
+  {{ content }}
+</div>
+
+<hr>
+
+<div class="feedback-box">
+  <h3>Public feedback</h3>
+  <p>React or comment via GitHub Discussions.</p>
+  {% if page.discussion_link %}
+    <a class="btn btn--primary" href="{{ page.discussion_link }}" target="_blank" rel="noopener">Open Discussion</a>
+  {% endif %}
+</div>
