@@ -35,3 +35,14 @@ defaults:
   poems:
     output: true
     permalink: /poems/:path/
+
+    collections:
+  books:
+    output: true
+    permalink: /books/:path/
+  chapters:
+    output: true
+    permalink: /read/:path/
+  poems:
+    output: true
+    permalink: /poems/:path/
