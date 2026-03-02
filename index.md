@@ -1,3 +1,7 @@
-# Md Mozahidul Islam
+---
+layout: home
+title: "Home"
+---
 
-Welcome to my personal website.
+Welcome.  
+Here you’ll find my research work, blogs, books, poems, and professional profile.
