@@ -1,0 +1,87 @@
+---
+layout: single
+---
+
+{% assign book = site.data.books.books | where: "id", page.book_id | first %}
+{% assign series = site.data.books.series | where: "id", book.series_id | first %}
+{% assign chapters = site.chapters | where: "book_id", page.book_id | sort: "chapter_no" %}
+
+<div class="book-hero">
+  {% if book.cover %}
+  <div class="book-cover">
+    <img src="{{ book.cover }}" alt="{{ book.book_title_bn | default: book.book_title_en | escape }}">
+  </div>
+  {% endif %}
+
+  <div class="book-meta">
+    <h1 class="book-title">
+      {{ book.book_title_bn | default: book.book_title_en }}
+    </h1>
+
+    {% if book.book_title_bn and book.book_title_en %}
+      <p class="book-subtitle">{{ book.book_title_en }}</p>
+    {% endif %}
+
+    <p class="book-series">
+      {{ series.title_bn }} {% if series.title_en %}<span class="muted">({{ series.title_en }})</span>{% endif %}
+    </p>
+
+    <div class="book-actions">
+      {% if chapters.size > 0 %}
+        <a class="btn btn--primary" href="{{ chapters[0].url }}">Start Reading</a>
+      {% endif %}
+      <a class="btn" href="/books/">All Books</a>
+    </div>
+  </div>
+</div>
+
+<div class="book-body">
+  {{ content }}
+
+  <hr>
+  <h2>Chapters</h2>
+
+  {% if chapters.size == 0 %}
+    <p>No chapters yet. Coming soon.</p>
+  {% else %}
+    <ol class="chapter-list">
+      {% for ch in chapters %}
+        <li>
+          <a href="{{ ch.url }}">{{ ch.chapter_no }}. {{ ch.chapter_title }}</a>
+          {% if ch.chapter_title_en %}<span class="muted">({{ ch.chapter_title_en }})</span>{% endif %}
+        </li>
+      {% endfor %}
+    </ol>
+  {% endif %}
+
+  <hr>
+  <h2>PDF Preview</h2>
+  {% if book.pdf and book.pdf != "" %}
+    <div class="pdf-box">
+      <p>Preview/download PDF from here:</p>
+      <a class="btn btn--primary" href="{{ book.pdf }}" target="_blank" rel="noopener">Open / Download PDF</a>
+      <p class="muted">Browser opens it first; you can download from the PDF viewer.</p>
+    </div>
+  {% else %}
+    <p>PDF will be added soon.</p>
+  {% endif %}
+
+  <hr>
+  <h2>Support the writer</h2>
+  <div class="support-box">
+    <p>If you enjoyed the reading, you can support my writing (payment not integrated yet):</p>
+    <p><strong>{{ book.support.mfs_label }}:</strong> {{ book.support.mfs_number }}</p>
+    <p class="muted">Send any amount, then mention the book name in your message if possible.</p>
+  </div>
+
+  <hr>
+  <h2>Public feedback</h2>
+  <div class="feedback-box">
+    <p>Give feedback publicly via GitHub Discussions:</p>
+    {% if page.discussion_link %}
+      <a class="btn btn--primary" href="{{ page.discussion_link }}" target="_blank" rel="noopener">Open Discussion</a>
+    {% else %}
+      <p class="muted">Discussion link not set yet for this book page.</p>
+    {% endif %}
+  </div>
+</div>
