@@ -1,14 +1,11 @@
 ---
-# Only the triple-dash lines above are required by Jekyll.
 ---
 
 @import "minimal-mistakes";
 
-/* Bangla font: clean + readable */
+/* Bangla fonts */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&display=swap');
 
-/* Use Serif for poetry/fiction feel, Sans as fallback */
 body {
   font-family: "Noto Serif Bengali", "Noto Sans Bengali", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
-@import "custom";
