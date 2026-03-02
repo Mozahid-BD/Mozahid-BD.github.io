@@ -12,7 +12,9 @@ No poems published yet.
 {% assign poems_sorted = poems | sort: "date" | reverse %}
 <ul class="poem-list">
 {% for p in poems_sorted %}
-  <li><a href="{{ p.url }}">{{ p.title }}</a></li>
+  <li>
+    <a href="{{ p.url }}">{{ p.title }}</a>
+  </li>
 {% endfor %}
 </ul>
 {% endif %}
