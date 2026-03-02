@@ -1,0 +1,32 @@
+title: "Md Mozahidul Islam"
+description: "Research • Essays • Books • Poems"
+url: "https://mozahid-bd.github.io"
+baseurl: ""
+
+remote_theme: "mmistakes/minimal-mistakes@4.26.2"
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-include-cache
+
+minimal_mistakes_skin: "default"
+
+locale: "en-US"
+encoding: "utf-8"
+
+markdown: kramdown
+
+paginate: 6
+paginate_path: /blog/page:num/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: false
+      read_time: true
+      comments: false
+      share: false
+      related: true
